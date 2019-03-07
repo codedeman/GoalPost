@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-
+import UserNotifications
 let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 
@@ -21,6 +21,9 @@ class GoalVC: UIViewController {
     @IBOutlet var tableVIew: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+    
         
         tableVIew.delegate =  self
         tableVIew.dataSource =  self
@@ -37,6 +40,7 @@ class GoalVC: UIViewController {
     
     }
     
+   
     
     func fetchCoreDataObjects() {
         self.fetch { (complete) in

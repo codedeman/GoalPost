@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1AE66E222679C5008B6455 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE66D222679C5008B6455 /* LoginVC.swift */; };
+		9D1AE67122267CB4008B6455 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE67022267CB4008B6455 /* AuthService.swift */; };
+		9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE67322267E0B008B6455 /* Constrants.swift */; };
 		9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D384351221D9A2E00F26468 /* FinishGoalVC.swift */; };
+		9D535D2C222C24EB00633991 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D535D2B222C24EB00633991 /* Reminder.swift */; };
+		9D535D2E222C2CCB00633991 /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D535D2D222C2CCB00633991 /* AddReminderViewController.swift */; };
 		9D5B27A2221C32A600F6BC51 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27A1221C32A600F6BC51 /* GoalType.swift */; };
 		9D5B27A4221C3EF000F6BC51 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27A3221C3EEF00F6BC51 /* CreateGoalVC.swift */; };
 		9D5B27A7221C450900F6BC51 /* UIControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27A6221C450900F6BC51 /* UIControllerExt.swift */; };
@@ -22,6 +27,7 @@
 		9D93EE82221BBB0B00CE3B73 /* GoalPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93EE81221BBB0B00CE3B73 /* GoalPostTests.swift */; };
 		9D93EE8D221BBB0B00CE3B73 /* GoalPostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93EE8C221BBB0B00CE3B73 /* GoalPostUITests.swift */; };
 		9D93EE9E221BC70E00CE3B73 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */; };
+		E05D2B275E2EF9E9941BE03D /* libPods-GoalPost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoalPost.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4016106162BB48D3FF499285 /* Pods-GoalPost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalPost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost.debug.xcconfig"; sourceTree = "<group>"; };
+		659AEFCD2867E6396F532ADE /* libPods-GoalPostTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GoalPostTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1AE66D222679C5008B6455 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9D1AE67022267CB4008B6455 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		9D1AE67322267E0B008B6455 /* Constrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		9D384351221D9A2E00F26468 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
+		9D535D2B222C24EB00633991 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		9D535D2D222C2CCB00633991 /* AddReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
 		9D5B27A1221C32A600F6BC51 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		9D5B27A3221C3EEF00F6BC51 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		9D5B27A6221C450900F6BC51 /* UIControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControllerExt.swift; sourceTree = "<group>"; };
@@ -63,6 +77,7 @@
 		9D93EE8C221BBB0B00CE3B73 /* GoalPostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPostUITests.swift; sourceTree = "<group>"; };
 		9D93EE8E221BBB0B00CE3B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
+		A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E05D2B275E2EF9E9941BE03D /* libPods-GoalPost.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +106,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A06273DAB041B4E06425C13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4016106162BB48D3FF499285 /* Pods-GoalPost.debug.xcconfig */,
+				A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		74CE0DB04828206523083291 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				659AEFCD2867E6396F532ADE /* libPods-GoalPostTests.a */,
+				0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9D1AE66F22267C64008B6455 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9D1AE67022267CB4008B6455 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9D1AE67222267DDE008B6455 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9D1AE67322267E0B008B6455 /* Constrants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		9D5B27A5221C449D00F6BC51 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +157,8 @@
 				9D93EE80221BBB0B00CE3B73 /* GoalPostTests */,
 				9D93EE8B221BBB0B00CE3B73 /* GoalPostUITests */,
 				9D93EE67221BBB0800CE3B73 /* Products */,
+				0A06273DAB041B4E06425C13 /* Pods */,
+				74CE0DB04828206523083291 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +175,8 @@
 		9D93EE68221BBB0800CE3B73 /* GoalPost */ = {
 			isa = PBXGroup;
 			children = (
+				9D1AE67222267DDE008B6455 /* Utilities */,
+				9D1AE66F22267C64008B6455 /* Service */,
 				9D5B27A5221C449D00F6BC51 /* Extentions */,
 				9D93EE9C221BBB8700CE3B73 /* Enums */,
 				9D93EE9B221BBB7E00CE3B73 /* View */,
@@ -161,6 +215,8 @@
 				9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */,
 				9D5B27A3221C3EEF00F6BC51 /* CreateGoalVC.swift */,
 				9D384351221D9A2E00F26468 /* FinishGoalVC.swift */,
+				9D1AE66D222679C5008B6455 /* LoginVC.swift */,
+				9D535D2D222C2CCB00633991 /* AddReminderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */,
+				9D535D2B222C24EB00633991 /* Reminder.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +245,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D93EE91221BBB0B00CE3B73 /* Build configuration list for PBXNativeTarget "GoalPost" */;
 			buildPhases = (
+				838180BAE958E2C219ED0FF5 /* [CP] Check Pods Manifest.lock */,
 				9D93EE62221BBB0800CE3B73 /* Sources */,
 				9D93EE63221BBB0800CE3B73 /* Frameworks */,
 				9D93EE64221BBB0800CE3B73 /* Resources */,
@@ -307,19 +365,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		838180BAE958E2C219ED0FF5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoalPost-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D93EE62221BBB0800CE3B73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1AE66E222679C5008B6455 /* LoginVC.swift in Sources */,
+				9D535D2C222C24EB00633991 /* Reminder.swift in Sources */,
 				9D93EE9E221BC70E00CE3B73 /* GoalCell.swift in Sources */,
 				9D5B27A4221C3EF000F6BC51 /* CreateGoalVC.swift in Sources */,
+				9D1AE67122267CB4008B6455 /* AuthService.swift in Sources */,
 				9D5B27A2221C32A600F6BC51 /* GoalType.swift in Sources */,
 				9D5B27A7221C450900F6BC51 /* UIControllerExt.swift in Sources */,
 				9D5B27A9221C4C2C00F6BC51 /* UIViewExt.swift in Sources */,
 				9D93EE6C221BBB0800CE3B73 /* GoalVC.swift in Sources */,
 				9D93EE6A221BBB0800CE3B73 /* AppDelegate.swift in Sources */,
+				9D535D2E222C2CCB00633991 /* AddReminderViewController.swift in Sources */,
 				9D5B27AB221C571C00F6BC51 /* UIButtonExt.swift in Sources */,
+				9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */,
 				9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */,
 				9D93EE72221BBB0800CE3B73 /* GoalPost.xcdatamodeld in Sources */,
 			);
@@ -494,6 +582,7 @@
 		};
 		9D93EE92221BBB0B00CE3B73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4016106162BB48D3FF499285 /* Pods-GoalPost.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +601,7 @@
 		};
 		9D93EE93221BBB0B00CE3B73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

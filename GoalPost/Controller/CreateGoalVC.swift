@@ -10,6 +10,7 @@ import UIKit
 
 class CreateGoalVC: UIViewController,UITextViewDelegate {
 
+    var reminders = [Reminder]()
     @IBOutlet var goalTextView: UITextView!
     @IBOutlet var shortTermBtn: UIButton!
     @IBOutlet var longTermBtn: UIButton!
@@ -51,7 +52,7 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
             finishGoalVC.initData(description: goalTextView.text!, type: goalType)
             presentingViewController?.presentSecondaryDetail(viewControllerToPresent: finishGoalVC)
         }
-        
+//
         
     }
     
@@ -63,6 +64,22 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         goalTextView.text = ""
         goalTextView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    func saveReminders() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(reminders, toFile: Reminder.ArchiveURL.path)
+        if !isSuccessfulSave {
+            print("Failed to save reminders...")
+        }
+    }
+    @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddReminderViewController, let reminder = sourceViewController.reminder {
+            
+            _ = NSIndexPath(row: reminders.count, section: 0)
+            reminders.append(reminder)
+            
+        
+        }
+//        if let sourceViewController =  sender
     }
 
     
