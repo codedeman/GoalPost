@@ -16,6 +16,7 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
     @IBOutlet var longTermBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
     
+  
     var goalType:GoalType = .shortTerm
     
     
@@ -25,6 +26,7 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
         shortTermBtn.setSelectedColor()
         longTermBtn.setDeselectedColor()
         goalTextView.delegate =  self
+       
 
     }
     
@@ -38,9 +40,12 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
     
     @IBAction func longTermButtonWasPressed(_ sender: Any) {
         
+//        datePicker.isHidden =  false
+        
         goalType = .logTerm
         longTermBtn.setSelectedColor()
         shortTermBtn.setDeselectedColor()
+        
         
         
     }
@@ -72,13 +77,13 @@ class CreateGoalVC: UIViewController,UITextViewDelegate {
         }
     }
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.source as? AddReminderViewController, let reminder = sourceViewController.reminder {
-            
-            _ = NSIndexPath(row: reminders.count, section: 0)
-            reminders.append(reminder)
-            
-        
-        }
+//        if let sourceViewController = sender.source as? AddReminderViewController, let reminder = sourceViewController.reminder {
+//            
+//            _ = NSIndexPath(row: reminders.count, section: 0)
+//            reminders.append(reminder)
+//            
+//        
+//        }
 //        if let sourceViewController =  sender
     }
 

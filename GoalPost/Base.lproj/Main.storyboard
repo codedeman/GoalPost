@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v79-Mq-73D">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -47,7 +47,7 @@
                                         <state key="normal" image="addGoal"/>
                                         <connections>
                                             <action selector="addGoalButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYq-UH-GKT"/>
-                                            <segue destination="eaw-wf-jYc" kind="presentation" id="RAY-tS-0IH"/>
+                                            <segue destination="eaw-wf-jYc" kind="presentation" identifier="CreateGoalVC" id="RAY-tS-0IH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWM-wp-LMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="103"/>
+            <point key="canvasLocation" x="1133.5999999999999" y="-6.746626686656672"/>
         </scene>
         <!--Finish GoalVC-->
         <scene sceneID="O5x-et-WY1">
@@ -429,11 +429,45 @@
                                             <action selector="createGoalBtnWasPressed:" destination="1uL-CK-IEh" eventType="touchUpInside" id="Sig-Vi-NBb"/>
                                         </connections>
                                     </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="vD1-Ut-swC">
+                                        <rect key="frame" x="5" y="31" width="365" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="aWf-Ja-saL"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="573900303.37621403">
+                                            <!--2019-03-10 08:45:03 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="datePickerFromValueChanged:" destination="1uL-CK-IEh" eventType="valueChanged" id="kYC-XP-fiq"/>
+                                        </connections>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="RYH-bG-Jwf">
+                                        <rect key="frame" x="5" y="0.0" width="163" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z5-4w-Tuv">
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rpI-uU-D6h">
+                                                <rect key="frame" x="114" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="remindGoalBtnWasPressed:" destination="1uL-CK-IEh" eventType="valueChanged" id="YaY-WU-Rk6"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Ga7-Re-F57" secondAttribute="bottom" id="2IN-YI-rCS"/>
+                                    <constraint firstItem="vD1-Ut-swC" firstAttribute="leading" secondItem="IBQ-Nf-aBF" secondAttribute="leading" constant="5" id="Dp1-NT-2ih"/>
+                                    <constraint firstItem="RYH-bG-Jwf" firstAttribute="top" secondItem="IBQ-Nf-aBF" secondAttribute="top" id="HeV-ct-0dI"/>
+                                    <constraint firstItem="vD1-Ut-swC" firstAttribute="top" secondItem="RYH-bG-Jwf" secondAttribute="bottom" id="Zjy-6O-Rlv"/>
                                     <constraint firstAttribute="trailing" secondItem="Ga7-Re-F57" secondAttribute="trailing" id="aoq-ma-NNd"/>
+                                    <constraint firstItem="RYH-bG-Jwf" firstAttribute="leading" secondItem="IBQ-Nf-aBF" secondAttribute="leading" constant="5" id="fmE-ci-3tH"/>
+                                    <constraint firstAttribute="trailing" secondItem="vD1-Ut-swC" secondAttribute="trailing" constant="5" id="wsb-tg-xPq"/>
                                     <constraint firstItem="Ga7-Re-F57" firstAttribute="leading" secondItem="IBQ-Nf-aBF" secondAttribute="leading" id="zhq-8h-bV9"/>
                                 </constraints>
                             </view>
@@ -455,12 +489,13 @@
                     </view>
                     <connections>
                         <outlet property="createGoalBtn" destination="Ga7-Re-F57" id="epq-Fp-VPt"/>
+                        <outlet property="datePicker" destination="vD1-Ut-swC" id="nJL-N6-WdE"/>
                         <outlet property="pointsTextField" destination="xWn-YS-kS6" id="28B-jB-J2h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31l-gV-CaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2314" y="773"/>
+            <point key="canvasLocation" x="2108" y="498"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="bF3-k3-2BZ">
@@ -570,24 +605,11 @@
         <!--Add-->
         <scene sceneID="3ir-M0-t8j">
             <objects>
-                <viewController id="v79-Mq-73D" customClass="AddReminderViewController" customModule="GoalPost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v79-Mq-73D" customClass="ProcessVC" customModule="GoalPost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OWO-s4-nRi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sRI-ER-H1b">
-                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="573318322.93243897">
-                                    <!--2019-03-03 15:05:22 +0000-->
-                                </date>
-                            </datePicker>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="sRI-ER-H1b" firstAttribute="trailing" secondItem="Pdt-Az-tfi" secondAttribute="trailing" id="J6s-6r-Fp9"/>
-                            <constraint firstItem="sRI-ER-H1b" firstAttribute="top" secondItem="Pdt-Az-tfi" secondAttribute="top" id="MZb-IJ-stz"/>
-                            <constraint firstItem="sRI-ER-H1b" firstAttribute="leading" secondItem="Pdt-Az-tfi" secondAttribute="leading" id="nLk-1L-mRb"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pdt-Az-tfi"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add" id="UwL-yl-Sjd">
@@ -599,12 +621,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="saveButton" destination="xRV-iw-vCC" id="9QL-nQ-Dwu"/>
-                        <outlet property="timePicker" destination="sRI-ER-H1b" id="XQF-JQ-B0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR5-C1-A1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3762" y="-72"/>
+            <point key="canvasLocation" x="3760.8000000000002" y="-72.413793103448285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EH7-xw-ALu">

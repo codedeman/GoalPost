@@ -5,9 +5,7 @@
 
   target 'GoalPost' do
     	
-	pod 'Alamofire'
- 	pod 'AlamofireImage'
-	pod 'SwiftyJSON', '~> 4.0'
+	
 
   end
 

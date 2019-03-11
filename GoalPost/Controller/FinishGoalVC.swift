@@ -20,7 +20,9 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
     
     var goalDescription: String!
     var goalType: GoalType!
+    var dateComponents = DateComponents()
     
+    @IBOutlet var datePicker: UIDatePicker!
     
     func initData(description: String, type: GoalType) {
         self.goalDescription = description
@@ -28,9 +30,18 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
     }
     
     
+    @IBAction func datePickerFromValueChanged(_ sender: Any) {
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd-MM-yyyy"
+//        let time = dateFormatter.string(from: (sender as AnyObject).date)
+//        print(" this is new value \(time)")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        datePicker.datePickerMode = .date
+//        datePicker.datePickerMode = .time
         createGoalBtn.bindToKeyboard()
+        datePicker.isHidden = true
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.badge,.sound]) { (granted, error) in
             
@@ -43,51 +54,49 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
             }
         }
     
-        // Do any additional setup after loading the view.
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-//        let goal = Goal(context: managedContext)
-//        
-//        goal.goalDescription =  goalDescription
-//        goal.goalType = goalType
-//        var time = timePicker.date
-//        let timeInterval  =  floorf(Float(time.timeIntervalSinceReferenceDate/60))*60
-//        
-//        time =  NSDate(timeIntervalSinceNow: TimeInterval(timeInterval)) as Date
-//        let notification  = UILocalNotification()
-//        
-//        notification.alertTitle  = "Reminder"
-//        notification.alertBody = "Don't forget to \(goalDescription)"
-//        notification.fireDate = time
-//        notification.soundName =  UILocalNotificationDefaultSoundName
-//        
-//        reminder =  Reminder(description1: description, time: time as NSDate, notification: notification)
-//        
-//    }
+
     
     @IBAction func createGoalBtnWasPressed(_ sender: Any) {
+        datePicker.datePickerMode = .time
+        let date = datePicker.date
+
         
+        let components = Calendar.current.dateComponents([.hour, .minute], from: date)
+   
+        let minute = components.minute!
+        
+        print("this time \(minute)")
+        
+     
+
+        
+
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
-                    
+
                     dismiss(animated: true, completion: nil)
                 }
             }
         }
         
-        sheduleNotification(inSeconds: 5, completion: { success in
-            
+
+       
+        
+
+      
+        
+        scheduleNotification(inSeconds: TimeInterval(minute) , completion: { success in
+
             if success{
                 print("Successfully schedule notification")
             }
             else{
                 print("Erro")
             }
-            
+
         })
         
         
@@ -95,27 +104,52 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
     }
     
     
+    @IBAction func remindGoalBtnWasPressed(_ sender: Any) {
+        datePicker.isHidden = false
+//        sender.date
+        
+//        datePicker.datePickerMode = .date
+//        let timer = datePicker.datePickerMode = .time
+//
+//        print("your variable\(timer)")
+    }
     @IBAction func backWasPressed(_ sender: Any) {
 //        dismiss(animated: true, completion: nil)
         dismissDetail()
 
     }
     
-    func sheduleNotification(inSeconds:TimeInterval,completion:@escaping (_ Success:Bool)->()) {
+    func scheduleNotification(inSeconds:TimeInterval,completion:@escaping (_ Success:Bool)->()) {
+        let myImage = "bb"
+        guard  let imageUrl = Bundle.main.url(forResource: myImage, withExtension: "gif") else {
+            completion(false)
+            return
+        }
+        var attachment:UNNotificationAttachment
+        
+          attachment = try!UNNotificationAttachment(identifier: "myNotification", url:imageUrl , options: .none)
+        //ONLY FOR EXTENSION
+    
          let notif = UNMutableNotificationContent()
+        notif.categoryIdentifier = "myNotificationCategory"
         notif.title = "New Notification"
         notif.subtitle =  goalType!.rawValue
         notif.body = goalDescription
+        notif.attachments  = [attachment]
+ 
         
         let  notifTrigger =  UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
-    
+//                let  notifTrigger =  UNTimeIntervalNotificationTrigger(
+
+        
         let request =  UNNotificationRequest(identifier: "myNotification", content: notif, trigger: notifTrigger)
+        
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
             
             if error != nil{
                 
-                print(error)
+                print(error!)
                 completion(false)
                 
             }
