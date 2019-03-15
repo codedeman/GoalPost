@@ -8,70 +8,133 @@
 
 import UIKit
 import QuartzCore
+import CoreData
 
 class ProcessVC: UIViewController,LineChartDelegate {
-    var lineChart: LineChart!
+   
+    
+    var lineChart:LineChart!
+    var goals:[Goal] = []
 
-      var label = UILabel()
 
+ 
+    @IBOutlet var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchCoreDataObjects()
+        
         var views: [String: AnyObject] = [:]
-        label.text = "..."
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = NSTextAlignment.center
-        self.view.addSubview(label)
-        views["label"] = label
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[label]-|", options: [], metrics: nil, views: views))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-80-[label]", options: [], metrics: nil, views: views))
-        
-        let data: [CGFloat] = [3, 4, -2, 11, 13, 15]
-        let data2: [CGFloat] = [1, 3, 5, 13, 17, 20]
-        
-        let xLabels: [String] = ["M", "T", "W", "T", "F", "S"]
-        
-        
         lineChart = LineChart()
         lineChart.animation.enabled = true
         lineChart.area = true
         lineChart.x.labels.visible = true
         lineChart.x.grid.count = 5
         lineChart.y.grid.count = 5
-        lineChart.addLine(data)
-        lineChart.addLine(data2)
+        
+        var goalprogress:[CGFloat] = []
+        
+        for goal in goals{
+            goalprogress.append(CGFloat(goal.goalProgress))
+        }
+        
+        lineChart.addLine(goalprogress)
+        self.view.addSubview(lineChart)
+
+ 
+//        lineChart.addLine([3, 4, 9, 11, 13, 15])
+//        lineChart.addLine([5, 4, 3, 6, 6, 7])
         lineChart.translatesAutoresizingMaskIntoConstraints = false
         lineChart.delegate = self
-    
         self.view.addSubview(lineChart)
-        views["chart"] = lineChart
+        
+//        label.text = "Your target this week, "
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = NSTextAlignment.center
+        self.view.addSubview(label)
+        views["label"] = label
 
+
+        views["chart"] = lineChart
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[chart]-|", options: [], metrics: nil, views: views))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[label]-[chart(==200)]", options: [], metrics: nil, views: views))
-        
-        
         // Do any additional setup after loading the view.
     }
+    
     func didSelectDataPoint(_ x: CGFloat, yValues: [CGFloat]) {
-        label.text = "x: \(x)     y: \(yValues)"
-        
+        print("\(x) and \(yValues)")
+
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         if let chart = lineChart {
             chart.setNeedsDisplay()
         }
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+      
+        
+    }
+    
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        
+        
+        let mainController = self.storyboard?.instantiateViewController(withIdentifier: "Main")
+        self.present(mainController!, animated: true, completion: nil)
+    }
+    
+    func fetchCoreDataObjects() {
+        self.fetch { (complete) in
+            if complete {
+                
+                label.text = "You have \(goals.count) targets this week"
+            
+                
+            }
+        }
+    }
+    
+    func rowIndex()  {
+        
+        var goalprogress:[CGFloat] = []
+
+        for goal in goals{
+            goalprogress.append(CGFloat(goal.goalProgress))
+        }
+        
+        lineChart.addLine(goalprogress)
+        self.view.addSubview(lineChart)
+
+        
+        
+    }
+    
+    func fetch(completion:(_ complete:Bool)->())  {
+        
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
+        
+        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        
+        do {
+            goals = try managedContext.fetch(fetchRequest)
+            print("Successfully fetched data.")
+            print("hello what is this\(goals.count)")
+            
+            completion(true)
+        } catch {
+            debugPrint("Could not fetch: \(error.localizedDescription)")
+            completion(false)
+        }
+        
     }
     
     
+    
+    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

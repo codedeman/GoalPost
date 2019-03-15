@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
-
+import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,11 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         UNUserNotificationCenter.current().delegate = self
         configureUserNotification()
         self.window!.makeKeyAndVisible()
-
+        FirebaseApp.configure()
+        
+        if Auth.auth().currentUser == nil{
+            
+            let storyboard  =  UIStoryboard(name: "Main", bundle: Bundle.main)
+            let authVC = storyboard.instantiateViewController(withIdentifier: "AuthVC")
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(authVC, animated: true, completion: nil)
+            
+        }
         // Override point for customization after application launch.
         return true
     }

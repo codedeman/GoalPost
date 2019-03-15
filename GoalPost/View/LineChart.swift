@@ -434,7 +434,7 @@ open class LineChart: UIView {
         // add line to first data point
         path.addLine(to: CGPoint(x: x.axis.inset, y: self.bounds.height - self.y.scale(data[0]) - y.axis.inset))
         // draw whole line chart
-        for index in 1..<data.count {
+        for index in 2..<data.count {
             let x1 = self.x.scale(CGFloat(index)) + x.axis.inset
             let y1 = self.bounds.height - self.y.scale(data[index]) - y.axis.inset
             path.addLine(to: CGPoint(x: x1, y: y1))

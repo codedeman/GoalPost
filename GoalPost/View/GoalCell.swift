@@ -26,6 +26,7 @@ class GoalCell: UITableViewCell {
         
         if goal.goalProgress == goal.goalCompletionValue {
             self.completionView.isHidden = false
+            print("goal process\(goal.goalCompletionValue)")
         } else {
             self.completionView.isHidden = true
         }

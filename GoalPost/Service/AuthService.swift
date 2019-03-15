@@ -1,64 +1,65 @@
-////
-////  AuthService.swift
-////  GoalPost
-////
-////  Created by Kien on 2/27/19.
-////  Copyright © 2019 Kien. All rights reserved.
-////
-//
 //import Foundation
+//import Firebase
 //
-//class AuhtService {
-//    
-//    static let instance = AuhtService()
-//    let defaults =   UserDefaults.standard
-//    var isLonggedIn:Bool{
-//        get{
-//            return defaults.bool(forKey: LOGGED_IN_KEY)
-//        }
-//        set{
-//            defaults.set(newValue, forKey: LOGGED_IN_KEY)
-//        }
-//    }
-//    var authToke:String{
-//        get{
-//            return defaults.value(forKey: TOKEN_KEY) as! String
-//        }
-//        set{
-//            
-//            defaults.set(newValue, forKey: TOKEN_KEY)
-//        }
-//        
-//    }
-//    var userEmail:String{
-//        get{
-//            
-//            return defaults.value(forKey: USER_EMAIL) as! String
-//            
-//        }
-//        set{
-//            defaults.set(newValue, forKey: USER_EMAIL) as! String
-//        }
-//    }
-//    
-//    func registerUser(email:String,password:String,completion:@escaping CompletionHander) {
-//        
-//        let lowerCaseEmail  = email.lowercased()
-//        let header = ["Content-Type":"application/json; charset=utf-8"]
-//        let body:[String:Any] = ["email":lowerCaseEmail,"password":password]
-//        
-//        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
-//            
-//            if response.result.error == nil {
-//                completion(true)
-//            } else {
-//                completion(false)
-//                debugPrint(response.result.error as Any)
+//class AuthService {
+//
+//    static let instance = AuthService()
+//    func registerUser(withEmail email :String,andPassword password:String,userCreationComplete:@escaping(_ status:Bool,_ _error:Error)->())  {
+//
+//        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+//            guard let user =  user else{
+//                userCreationComplete(false,error!)
+//                return
 //            }
+//
+//            let userData = ["provider": user.providerID, "email": user.email]
+//            DataService.instance.createDBUser(uid: user.uid, userData: userData)
+//            userCreationComplete(true, nil)
+//
 //        }
-//        
+//
+//
+//
 //    }
-//    
-//    
-//    
 //}
+
+//
+//  AuthService.swift
+//  breakpoint
+//
+//  Created by Caleb Stultz on 7/24/17.
+//  Copyright © 2017 Caleb Stultz. All rights reserved.
+//
+
+import Foundation
+import Firebase
+
+
+class AuthService {
+    static let instance  = AuthService()
+    
+    func registerUser(withEmail email: String, andPassword password: String, userCreationComplete: @escaping(_ status: Bool, _ error: Error?) -> ()) {
+        Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
+            guard let authDataResult = authDataResult else {
+                userCreationComplete(false, error)
+                return
+            }
+            
+            let userData = ["provider": authDataResult.user.providerID, "email" : authDataResult.user.email]
+            DataService.instance.creteDBUser(uid: authDataResult.user.uid, userData: userData)
+            userCreationComplete(true, nil)
+        }
+    }
+    
+    func loginUser(withEmail email: String, andPassword password: String, loginComplete: @escaping(_ status: Bool, _ error: Error?) -> ()) {
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+            guard let authDataResult = authDataResult else {
+                loginComplete(false, error)
+                return
+            }
+            loginComplete(true, nil)
+        }
+    }
+}

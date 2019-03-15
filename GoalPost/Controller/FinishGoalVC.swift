@@ -169,6 +169,7 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
         goal.goalType = goalType.rawValue
         goal.goalCompletionValue = Int32(pointsTextField.text!)!
         goal.goalProgress = Int32(0)
+        print("your goal\(goal.goalCompletionValue)")
         
         do {
             try managedContext.save()

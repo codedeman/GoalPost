@@ -15,13 +15,19 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate
 class GoalVC: UIViewController {
     
     var goals:[Goal] = []
+    var goal:Goal?
     
+    @IBOutlet var menuButton: UIButton!
     
-
     @IBOutlet var tableVIew: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("your process\(goal?.goalProgress)")
+        if self.revealViewController() != nil {
+//            menuButton.target =  self.revealViewController()
+//            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
     
         
@@ -74,7 +80,8 @@ extension GoalVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalCell else {return UITableViewCell()}
         let goal = goals[indexPath.row]
-        print("what's wrong\(goal.goalDescription!)")
+        
+        print("what's wrong\(goal.goalProgress)")
         cell.configureCell(goal: goal)
         return cell
     }
@@ -179,25 +186,13 @@ extension GoalVC{
             do {
                 goals = try managedContext.fetch(fetchRequest)
                 print("Successfully fetched data.")
+                print("hello what is this\(goals.count)")
+
                 completion(true)
             } catch {
                 debugPrint("Could not fetch: \(error.localizedDescription)")
                 completion(false)
             }
-    //        guard let managedContext = appDelegate?.persistentContainer.viewContext else { return }
-    //
-    //        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
-    //        do{
-    //
-    //            goals =  try managedContext.fetch(fetchRequest) as! [Goal]
-    //            print("Sucessfully fetched data")
-    //            completion(true)
-    //        }catch{
-    //            completion(false)
-    //            debugPrint("Could not fetch:\(error.localizedDescription)")
-    //
-    //        }
-    ////        managedContext.fetch(fetchRequest)
-    //    }
+  
     }
 }
