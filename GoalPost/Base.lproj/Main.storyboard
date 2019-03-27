@@ -1332,25 +1332,29 @@
                                             <action selector="cameraCapture:" destination="CZ0-xc-Nv3" eventType="touchUpInside" id="IfP-Pe-THi"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4tx-dp-p9c">
-                                        <rect key="frame" x="321" y="41" width="46" height="68"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4tx-dp-p9c">
+                                        <rect key="frame" x="295" y="0.0" width="75" height="131"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-Ru-Omx">
-                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIm-Ru-Omx">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="48"/>
+                                                <state key="normal" image="flash_off"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-aB-DXK">
-                                                <rect key="frame" x="0.0" y="38" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-aB-DXK">
+                                                <rect key="frame" x="0.0" y="56" width="75" height="75"/>
+                                                <state key="normal" image="camera"/>
+                                                <connections>
+                                                    <action selector="switchCamera:" destination="CZ0-xc-Nv3" eventType="touchUpInside" id="BB3-by-43x"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.57409652050000004" green="0.75981927709999997" blue="0.83483213190000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="4tx-dp-p9c" firstAttribute="top" secondItem="Ebj-uX-qWl" secondAttribute="top" id="4cn-JW-7Qa"/>
                                     <constraint firstItem="08a-5S-JZk" firstAttribute="centerX" secondItem="Ebj-uX-qWl" secondAttribute="centerX" id="5Oz-3q-Yld"/>
                                     <constraint firstAttribute="bottom" secondItem="08a-5S-JZk" secondAttribute="bottom" constant="29" id="N7B-YX-hcy"/>
+                                    <constraint firstAttribute="trailing" secondItem="4tx-dp-p9c" secondAttribute="trailing" constant="5" id="Vkm-dt-Efa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1366,6 +1370,7 @@
                     <connections>
                         <outlet property="camerButton" destination="08a-5S-JZk" id="uR8-8Z-zQn"/>
                         <outlet property="cameraView" destination="Ebj-uX-qWl" id="bzU-Ur-DE3"/>
+                        <outlet property="toggleCameraButton" destination="jEM-aB-DXK" id="1xA-4E-iu0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xp-FF-LiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1377,10 +1382,12 @@
         <image name="addGoal" width="35" height="32"/>
         <image name="back" width="14" height="25"/>
         <image name="calendar" width="36" height="36"/>
+        <image name="camera" width="75" height="75"/>
         <image name="close2" width="21" height="20"/>
         <image name="defaultProfileImage" width="102" height="102"/>
         <image name="defaultProfileImage-1" width="21" height="20"/>
         <image name="emailIcon" width="25" height="16"/>
+        <image name="flash_off" width="48" height="48"/>
         <image name="logoutIcon" width="19" height="21"/>
         <image name="me" width="46080" height="69120"/>
         <image name="me-tabIcon" width="25" height="25"/>
