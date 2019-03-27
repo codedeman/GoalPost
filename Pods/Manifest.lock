@@ -66,11 +66,17 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NVActivityIndicatorView (4.6.1):
+    - NVActivityIndicatorView/Presenter (= 4.6.1)
+  - NVActivityIndicatorView/Presenter (4.6.1)
+  - VACalendar (1.3)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - NVActivityIndicatorView
+  - VACalendar
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -86,6 +92,8 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - NVActivityIndicatorView
+    - VACalendar
 
 SPEC CHECKSUMS:
   Firebase: 749a8ff4962f9d8c79dda1966de20f6f77583d67
@@ -100,7 +108,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NVActivityIndicatorView: 4ca19fccc84595a78957336a086d00a49be6ce61
+  VACalendar: 3e5a001cbf437ebed2bcfc747f3187e555d65175
 
-PODFILE CHECKSUM: 53943e06332b3a8c1cf8c6dfcfe6c1165fa919b9
+PODFILE CHECKSUM: bf5a991e966f999cba0c37b2210fe951341b2e56
 
 COCOAPODS: 1.5.3

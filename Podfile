@@ -8,6 +8,10 @@
 	pod 'Firebase/Core'
 	pod 'Firebase/Database'
 	pod 'Firebase/Auth'
+    	pod 'VACalendar'
+	pod 'NVActivityIndicatorView'
+
+
 
   end
 

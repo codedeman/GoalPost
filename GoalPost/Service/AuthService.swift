@@ -46,7 +46,7 @@ class AuthService {
             }
             
             let userData = ["provider": authDataResult.user.providerID, "email" : authDataResult.user.email]
-            DataService.instance.creteDBUser(uid: authDataResult.user.uid, userData: userData)
+            DataService.instance.creteDBUser(uid: authDataResult.user.uid, userData: userData as Dictionary<String, Any>)
             userCreationComplete(true, nil)
         }
     }
@@ -55,7 +55,7 @@ class AuthService {
         
         
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
-            guard let authDataResult = authDataResult else {
+            guard authDataResult != nil else {
                 loginComplete(false, error)
                 return
             }

@@ -14,7 +14,8 @@ class UserProfileVC: UIViewController {
     @IBOutlet var profileImage: UIImageView!
     
     @IBOutlet var emailLbl: UILabel!
-    var calendar = ["your goal today","your goal this week"]
+    var calendar = ["Today","Week","About US"]
+    var imageIcon = ["calendar","calendar","me-tabIcon"]
 
     
     @IBOutlet var tableView: UITableView!
@@ -80,8 +81,7 @@ extension UserProfileVC:UITableViewDelegate,UITableViewDataSource{
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UserProfileCell
         cell.goalLbl.text  = calendar[indexPath.row]
-        
-//        cell.textLabel?.text = calendar[indexPath.row]
+        cell.imageName.image = UIImage(named: imageIcon[indexPath.row])
         
         
         
@@ -96,6 +96,20 @@ extension UserProfileVC:UITableViewDelegate,UITableViewDataSource{
             self.present(diagramProcess!, animated: true, completion: nil)
             
         }
+        
+        if indexPath.row == 1 {
+            
+            let diagramProcess = self.storyboard?.instantiateViewController(withIdentifier: "Diagram")
+            self.present(diagramProcess!, animated: true, completion: nil)
+        }
+        
+        if indexPath.row == 2 {
+            
+            let aboutUs = self.storyboard?.instantiateViewController(withIdentifier: "AboutUs")
+            self.present(aboutUs!, animated: true, completion: nil)
+        }
+        
+        
     }
     
     

@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
+
 
 class LoginVC: UIViewController {
     
-    
+    var container: UIView = UIView()
+    var loadingView: UIView = UIView()
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     @IBOutlet var emailField: InsetTextField!
     
     @IBOutlet var passwordField: InsetTextField!
@@ -22,12 +26,34 @@ class LoginVC: UIViewController {
         passwordField.delegate = self
 
     }
+    func showActivityIndicatory(uiView: UIView) {
     
+        let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
+        actInd.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
+        actInd.center =  uiView.center
+        actInd.hidesWhenStopped = true
+        actInd.style =
+            UIActivityIndicatorView.Style.whiteLarge
+        uiView.addSubview(actInd)
+//        showActivityIndicatory.startAnimating()
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        _ = CGSize(width: 30.0, height: 30.0)
+        
+
+    }
     @IBAction func signInBtnWasPressed(_ sender: Any) {
         
         if emailField.text !=  nil && passwordField.text !=  nil {
             AuthService.instance.loginUser(withEmail: emailField.text!, andPassword: passwordField.text!) { (success,loginError ) in
                 if success {
+                    
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                        
+                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+                    }
                     let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "Main")
                     self.present(mainVC!, animated: true, completion: nil)
 //                    self.dismiss(animated: true, completion: nil)
@@ -56,6 +82,10 @@ class LoginVC: UIViewController {
         
     }
     
+    @IBAction func registerBtnWasPressed(_ sender: Any) {
+        let registerVC = self.storyboard?.instantiateViewController(withIdentifier: "Register")
+        self.present(registerVC!, animated: true, completion: nil)
+    }
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)

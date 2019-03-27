@@ -25,6 +25,9 @@
 		9D5B27A7221C450900F6BC51 /* UIControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27A6221C450900F6BC51 /* UIControllerExt.swift */; };
 		9D5B27A9221C4C2C00F6BC51 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27A8221C4C2C00F6BC51 /* UIViewExt.swift */; };
 		9D5B27AB221C571C00F6BC51 /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B27AA221C571C00F6BC51 /* UIButtonExt.swift */; };
+		9D7C6569224872E8009FCFB8 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7C6568224872E8009FCFB8 /* CameraController.swift */; };
+		9D8A2981223F403F00C65187 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A2980223F403F00C65187 /* CalendarVC.swift */; };
+		9D8A2983223F4DD500C65187 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A2982223F4DD500C65187 /* AboutVC.swift */; };
 		9D93EE6A221BBB0800CE3B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93EE69221BBB0800CE3B73 /* AppDelegate.swift */; };
 		9D93EE6C221BBB0800CE3B73 /* GoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */; };
 		9D93EE6F221BBB0800CE3B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D93EE6D221BBB0800CE3B73 /* Main.storyboard */; };
@@ -42,6 +45,9 @@
 		9DA2BDA32230FFF600073B48 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2BDA22230FFF600073B48 /* NotificationViewController.swift */; };
 		9DA2BDA62230FFF600073B48 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2BDA42230FFF600073B48 /* MainInterface.storyboard */; };
 		9DA2BDAA2230FFF600073B48 /* MyContentExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DA2BD9C2230FFF600073B48 /* MyContentExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */; };
+		9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DE2243FFC800901C8C /* RoundedButton.swift */; };
+		9DE5612A22463053005095B0 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5612922463053005095B0 /* CameraVC.swift */; };
 		9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */; };
 		9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BC22364C5C0039E2EA /* LineChart.swift */; };
 		E05D2B275E2EF9E9941BE03D /* libPods-GoalPost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */; };
@@ -109,6 +115,9 @@
 		9D5B27A6221C450900F6BC51 /* UIControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControllerExt.swift; sourceTree = "<group>"; };
 		9D5B27A8221C4C2C00F6BC51 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		9D5B27AA221C571C00F6BC51 /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		9D7C6568224872E8009FCFB8 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		9D8A2980223F403F00C65187 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
+		9D8A2982223F4DD500C65187 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		9D93EE66221BBB0800CE3B73 /* GoalPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D93EE69221BBB0800CE3B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalVC.swift; sourceTree = "<group>"; };
@@ -133,6 +142,9 @@
 		9DA2BDA22230FFF600073B48 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		9DA2BDA52230FFF600073B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9DA2BDA72230FFF600073B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		9DC466DE2243FFC800901C8C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9DE5612922463053005095B0 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessVC.swift; sourceTree = "<group>"; };
 		9DFBA4BC22364C5C0039E2EA /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,6 +239,7 @@
 				9D5B27A8221C4C2C00F6BC51 /* UIViewExt.swift */,
 				9D5B27AA221C571C00F6BC51 /* UIButtonExt.swift */,
 				9D4C4A0E2237A2AB001F0329 /* GoalPost-Bridging-Header.h */,
+				9DC466DE2243FFC800901C8C /* RoundedButton.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -306,6 +319,11 @@
 				9D98680422390FA600656C10 /* AuthVC.swift */,
 				9D9868062239420100656C10 /* UserProfileVC.swift */,
 				9D47429A223B9CEF00981A56 /* BackTableVC.swift */,
+				9D8A2980223F403F00C65187 /* CalendarVC.swift */,
+				9D8A2982223F4DD500C65187 /* AboutVC.swift */,
+				9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */,
+				9DE5612922463053005095B0 /* CameraVC.swift */,
+				9D7C6568224872E8009FCFB8 /* CameraController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -537,17 +555,22 @@
 				9D93EE9E221BC70E00CE3B73 /* GoalCell.swift in Sources */,
 				9D5B27A4221C3EF000F6BC51 /* CreateGoalVC.swift in Sources */,
 				9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */,
+				9D7C6569224872E8009FCFB8 /* CameraController.swift in Sources */,
 				9D5A592F22380E3900D34CC8 /* ShadowView.swift in Sources */,
 				9D387B972237DC4F0045CEB9 /* DataService.swift in Sources */,
+				9DE5612A22463053005095B0 /* CameraVC.swift in Sources */,
 				9D1AE67122267CB4008B6455 /* AuthService.swift in Sources */,
 				9D9868072239420100656C10 /* UserProfileVC.swift in Sources */,
 				9D5B27A2221C32A600F6BC51 /* GoalType.swift in Sources */,
+				9D8A2981223F403F00C65187 /* CalendarVC.swift in Sources */,
 				9D5B27A7221C450900F6BC51 /* UIControllerExt.swift in Sources */,
 				9D5B27A9221C4C2C00F6BC51 /* UIViewExt.swift in Sources */,
 				9D5A592D2238034900D34CC8 /* InsetTextField.swift in Sources */,
+				9D8A2983223F4DD500C65187 /* AboutVC.swift in Sources */,
 				9D47429B223B9CEF00981A56 /* BackTableVC.swift in Sources */,
 				9D93EE6C221BBB0800CE3B73 /* GoalVC.swift in Sources */,
 				9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */,
+				9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */,
 				9D4742A0223BE58C00981A56 /* UserProfileCell.swift in Sources */,
 				9D4C4A112237A2AE001F0329 /* SWRevealViewController.m in Sources */,
 				9D98680522390FA600656C10 /* AuthVC.swift in Sources */,
@@ -555,6 +578,7 @@
 				9D5B27AB221C571C00F6BC51 /* UIButtonExt.swift in Sources */,
 				9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */,
 				9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */,
+				9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */,
 				9D47429E223BDDC300981A56 /* CurrentUser.swift in Sources */,
 				9D93EE72221BBB0800CE3B73 /* GoalPost.xcdatamodeld in Sources */,
 			);
