@@ -10,6 +10,7 @@
 	pod 'Firebase/Auth'
     	pod 'VACalendar'
 	pod 'NVActivityIndicatorView'
+	pod 'PieCharts'
 
 
 
