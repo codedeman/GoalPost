@@ -11,6 +11,7 @@
     	pod 'VACalendar'
 	pod 'NVActivityIndicatorView'
 	pod 'PieCharts'
+	pod 'FBSDKLoginKit'
 
 
 

@@ -29,17 +29,36 @@ class DataService {
         return _REF_USERS
     }
     var REF_GROUPS:DatabaseReference{
-        return REF_GROUPS
+        return self.REF_GROUPS
     }
     var  REF_FEED:DatabaseReference{
         
-        return REF_FEED
+        return _REF_FEED
     }
     
     func creteDBUser(uid: String,userData:Dictionary<String,Any>)  {
         
         REF_USERS.child("uid").updateChildValues(userData)
     }
+    
+    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping (_ status: Bool) -> ()) {
+        if groupKey != nil {
+            // send to groups ref
+        } else {
+            REF_FEED.childByAutoId().updateChildValues(["content": message, "senderId": uid])
+            sendComplete(true)
+        }
+    }
+//    func uploadPost(withMessage message:String,forUID uid:String,withGroupKey groupKey:String?,sendComplete:@escaping (_ status:Bool)->()){
+//
+//        if groupKey != nil{
+//
+//        }else{
+//            REF_FEED.childByAutoId().updateChildValues(["content":message,"senderId":uid])
+//            sendComplete(true)
+//        }
+//
+//    }
     
     
 

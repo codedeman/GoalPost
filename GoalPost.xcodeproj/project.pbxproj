@@ -45,6 +45,7 @@
 		9DA2BDA32230FFF600073B48 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2BDA22230FFF600073B48 /* NotificationViewController.swift */; };
 		9DA2BDA62230FFF600073B48 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2BDA42230FFF600073B48 /* MainInterface.storyboard */; };
 		9DA2BDAA2230FFF600073B48 /* MyContentExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9DA2BD9C2230FFF600073B48 /* MyContentExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9DA3A464224CCCAF008FFC27 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */; };
 		9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */; };
 		9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DE2243FFC800901C8C /* RoundedButton.swift */; };
 		9DE5612A22463053005095B0 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5612922463053005095B0 /* CameraVC.swift */; };
@@ -142,6 +143,7 @@
 		9DA2BDA22230FFF600073B48 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		9DA2BDA52230FFF600073B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9DA2BDA72230FFF600073B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9DC466DE2243FFC800901C8C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		9DE5612922463053005095B0 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 		9D93EE9A221BBB3B00CE3B73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */,
 				9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */,
 				9D5B27A3221C3EEF00F6BC51 /* CreateGoalVC.swift */,
 				9D384351221D9A2E00F26468 /* FinishGoalVC.swift */,
@@ -371,6 +374,7 @@
 				9D93EE63221BBB0800CE3B73 /* Frameworks */,
 				9D93EE64221BBB0800CE3B73 /* Resources */,
 				9DA2BDAE2230FFF600073B48 /* Embed App Extensions */,
+				F13AD60A9B3888C2BAD9DC3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -543,6 +547,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F13AD60A9B3888C2BAD9DC3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -572,6 +598,7 @@
 				9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */,
 				9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */,
 				9D4742A0223BE58C00981A56 /* UserProfileCell.swift in Sources */,
+				9DA3A464224CCCAF008FFC27 /* ImageViewController.swift in Sources */,
 				9D4C4A112237A2AE001F0329 /* SWRevealViewController.m in Sources */,
 				9D98680522390FA600656C10 /* AuthVC.swift in Sources */,
 				9D93EE6A221BBB0800CE3B73 /* AppDelegate.swift in Sources */,

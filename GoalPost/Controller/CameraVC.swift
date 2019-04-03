@@ -11,16 +11,25 @@ import UIKit
 import Photos
 import AVFoundation
 
-enum CameraTypes {
-    case Front,Back,Both,None
-    
-}
-class CameraVC: UIViewController {
-    let cameraController = CameraController()
 
-//    var captureSession:AVCaptureSession!
-    var cameraOutput:AVCapturePhotoOutput!
-    var  previewLayer:AVCaptureVideoPreviewLayer!
+class CameraVC: UIViewController {
+    var captureSession = AVCaptureSession()
+    
+    // which camera input do we want to use
+    var backFacingCamera: AVCaptureDevice?
+    var frontFacingCamera: AVCaptureDevice?
+    var currentDevice: AVCaptureDevice?
+    
+    // output device
+    var stillImageOutput: AVCaptureStillImageOutput?
+    var stillImage: UIImage?
+    
+    // camera preview layer
+    var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    // double tap to switch from back to front facing camera
+    var toggleCameraGestureRecognizer = UITapGestureRecognizer()
+    
     
     @IBOutlet var camerButton: UIButton!
     @IBOutlet var capturePreviewView: UIView!
@@ -31,173 +40,84 @@ class CameraVC: UIViewController {
     
     var devices = AVCaptureDevice.devices(for: AVMediaType.video)
     
-    lazy var availableCamera:CameraTypes = {
-        
-        
-        if devices.count == 2 {
-            self.toggleCameraButton.isHidden = false
-            return .Both
-        }else if devices.count == 1{
-            
-            self.toggleCameraButton.isHidden = true
-            let device = (devices.first as! AVCaptureDevice)
-            return (device.position == .front) ? .Front : .Back
-            
-            //
-        }
-        self.toggleCameraButton.isHidden = true
-        self.camerButton.isHidden =  true
-        return .None
-        
-        
-    }()
     
-    var captureSession =  AVCaptureSession()
-    var stillImageOutput  = AVCaptureStillImageOutput()
-    var videoPreviewLayer = AVCaptureVideoPreviewLayer()
+
+
+    
+override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+}
     override func viewDidLoad() {
         super.viewDidLoad()
         camerButton.rounderButton()
-        UIApplication.shared.setStatusBarHidden(true, with: .none)
-
-//        func configureCameraController() {
-//            cameraController.prepare {(error) in
-//                if let error = error {
-//                    print("this is \(error)")
-//                }
-//
-//                try? self.cameraController.displayPreview(on: self.capturePreviewView)
-//            }
-//        }
-//        configureCameraController()
-
-
-
-    }
-   
-
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-        let devices  =  AVCaptureDevice.devices(for: AVMediaType.video)
-        
-        for device in devices{
-            
-            //            if devi
-            //            if device  == AVCaptureDevice.default(for: AVMediaType.video)
-            
-            if device.position ==  AVCaptureDevice.Position.front
-                
-            {
-                
-                do{
-                    
-                    let input = try AVCaptureDeviceInput(device: device)
-                    
-                    if  (captureSession.canAddInput(input))
-                    {
-                        captureSession.addInput(input)
-                        if #available(iOS 11.0, *) {
-                            stillImageOutput.outputSettings = [AVVideoCodecKey:AVVideoCodecType.jpeg]
-                        }
-                        
-                        
-                        if captureSession.canAddOutput(stillImageOutput)
-                        {
-                            captureSession.addOutput(stillImageOutput)
-                            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-                            
-                            videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
-                            
-                            videoPreviewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-//                            capturePreviewView.layer.addSublayer(videoPreviewLayer)
-//                            videoPreviewLayer.frame = cameraView.bounds
-//                            captureSession.startRunning()
-                            capturePreviewView.layer.addSublayer(videoPreviewLayer)
-                            videoPreviewLayer.frame = capturePreviewView.bounds
-                            captureSession.startRunning()
-                            
-//                            capturePreviewView.position  = CGPoint(x: self.cameraView.frame.width/2, y: self.cameraView.frame.height)
-                            capturePreviewView.bringSubviewToFront(camerButton)
-                            
-                            
-                            
-                            
-                        }
-                    }
-                    
-                    
-                    
-                    
-                }catch{
-                    
-                    print(error)
-                }
-                
-                
+        captureSession.sessionPreset = AVCaptureSession.Preset.photo
+        let devices = AVCaptureDevice.devices(for: AVMediaType.video)
+        for device in devices {
+            if device.position == .back {
+                backFacingCamera = device
+            } else if device.position == .front {
+                frontFacingCamera = device
             }
+        }
+        // default device
+        currentDevice = frontFacingCamera
+        
+        // configure the session with the output for capturing our still image
+        stillImageOutput = AVCaptureStillImageOutput()
+        stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
+        
+        do {
+            let captureDeviceInput = try AVCaptureDeviceInput(device: currentDevice!)
             
+            captureSession.addInput(captureDeviceInput)
+            captureSession.addOutput(stillImageOutput!)
+            
+            // set up the camera preview layer
+            cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            view.layer.addSublayer(cameraPreviewLayer!)
+            cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            cameraPreviewLayer?.frame = view.layer.frame
+            
+            view.bringSubviewToFront(camerButton)
+            
+            captureSession.startRunning()
+            
+            // toggle the camera
+//            toggleCameraGestureRecognizer.numberOfTapsRequired = 2
+//            toggleCameraGestureRecognizer.addTarget(self, action: #selector(toggleCamera))
+//            view.addGestureRecognizer(toggleCameraGestureRecognizer)
+        } catch let error {
+            print(error)
         }
     }
-    
 
     
     
     @IBAction func switchCamera(_ sender: Any) {
         
-        do {
-            try cameraController.switchCameras()
-        }
-            
-        catch {
-            print(error)
-        }
-        
-        switch cameraController.currentCameraPosition {
-        case .some(.front):
-            toggleCameraButton.setImage(UIImage(named: "camera"), for: .normal)
-            
-        case .some(.rear):
-            toggleCameraButton.setImage(UIImage(named: "camera"), for: .normal)
-
-            
-        case .none:
-            return
-        }
+       
     }
     @IBAction func cameraCapture(_ sender: Any) {
         
-        
-        let videoConnection = stillImageOutput.connection(with: AVMediaType.video)
+        let videoConnection = stillImageOutput?.connection(with: AVMediaType.video)
         
         // capture a still image asynchronously
-        stillImageOutput.captureStillImageAsynchronously(from: videoConnection ?? <#default value#>, completionHandler: { (imageDataBuffer, error) in
+        stillImageOutput?.captureStillImageAsynchronously(from: videoConnection!, completionHandler: { (imageDataBuffer, error) in
             
             if let imageData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: imageDataBuffer!, previewPhotoSampleBuffer: imageDataBuffer!) {
-//                self.stillImageOutput = UIImage(data: imageData)
+                self.stillImage = UIImage(data: imageData)
                 self.performSegue(withIdentifier: "showPhoto", sender: self)
             }
         })
         
-//        if let videoConnection = stillImageOutput.connection(with: AVMediaType.video) {
-//
-//            stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (sampleBuffer, error) -> Void in
-//                // ...
-//                // Process the image data (sampleBuffer) here to get an image file we can put in our captureImageView
-//            })
-//
-//        }
-        
-//        cameraController.captureImage {(image, error) in
-//            guard let image = image else {
-//                print(error ?? "Image capture error")
-//                return
-//            }
-//
-//            try? PHPhotoLibrary.shared().performChangesAndWait {
-//                PHAssetChangeRequest.creationRequestForAsset(from: image)
-//            }
-//        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto" {
+            let imageViewController = segue.destination as! ImageViewController
+            imageViewController.image = self.stillImage
+        }
     }
     
 

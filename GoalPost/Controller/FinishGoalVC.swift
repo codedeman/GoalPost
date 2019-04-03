@@ -10,6 +10,7 @@ import UIKit
 
 import CoreData
 import UserNotifications
+import Firebase
 
 
 class FinishGoalVC: UIViewController,UITextFieldDelegate {
@@ -67,17 +68,30 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
    
         let minute = components.minute!
         
-        print("this time \(minute)")
         
      
 
         
-
+//
         if pointsTextField.text != "" {
             self.save { (complete) in
                 if complete {
+//
+                    let test = "i'm felling high"
+                    DataService.instance.uploadPost(withMessage: test, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete: { (isComplete) in
 
-                    dismiss(animated: true, completion: nil)
+                        if isComplete{
+
+                            self.createGoalBtn.isEnabled  = true
+                            self.dismiss(animated: true, completion: nil)
+
+                        }else{
+                            self.createGoalBtn.isEnabled  = true
+                            print("there are error")
+
+                        }
+                    })
+//
                 }
             }
         }
@@ -88,25 +102,21 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
 
       
         
-        scheduleNotification(inSeconds: TimeInterval(minute) , completion: { success in
-
-            if success{
-                print("Successfully schedule notification")
-            }
-            else{
-                print("Erro")
-            }
-
-        })
-        
-        
-
+//        scheduleNotification(inSeconds: TimeInterval(minute) , completion: { success in
+//
+//            if success{
+//                print("Successfully schedule notification")
+//            }
+//            else{
+//                print("Erro")
+//            }
+//        })
+    
     }
     
     
     @IBAction func remindGoalBtnWasPressed(_ sender: Any) {
         datePicker.isHidden = false
-//        sender.date
         
 //        datePicker.datePickerMode = .date
 //        let timer = datePicker.datePickerMode = .time

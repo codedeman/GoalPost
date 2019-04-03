@@ -17,17 +17,20 @@ class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable
     @IBOutlet var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NVActivityIndicatorView(frame: frame, type: type, color: color, padding: padding)
         
         startAnimating()
+        
         let url = URL(string: "https://kienphamdev.blogspot.com/p/about-me.html")
+        
         if let unwrappedURL = url{
 
+            
             let request  = URLRequest(url: unwrappedURL)
             let session  = URLSession.shared
             let task  = session.dataTask(with: request){
                 
                 (data,response,err) in
+             
                 if err == nil{
                     
                     self.webView.load(request)
@@ -38,6 +41,7 @@ class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable
                 }
             }
             task.resume()
+                
             stopAnimating()
         }
         
