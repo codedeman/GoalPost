@@ -10,6 +10,7 @@
 		9D1AE66E222679C5008B6455 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE66D222679C5008B6455 /* LoginVC.swift */; };
 		9D1AE67122267CB4008B6455 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE67022267CB4008B6455 /* AuthService.swift */; };
 		9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE67322267E0B008B6455 /* Constrants.swift */; };
+		9D25297C22549A640008A80F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D25297B22549A630008A80F /* FeedVC.swift */; };
 		9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D384351221D9A2E00F26468 /* FinishGoalVC.swift */; };
 		9D387B972237DC4F0045CEB9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D387B962237DC4F0045CEB9 /* DataService.swift */; };
 		9D387B992237DE080045CEB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D387B982237DE070045CEB9 /* GoogleService-Info.plist */; };
@@ -49,6 +50,8 @@
 		9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */; };
 		9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DE2243FFC800901C8C /* RoundedButton.swift */; };
 		9DE5612A22463053005095B0 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5612922463053005095B0 /* CameraVC.swift */; };
+		9DE62D29225464C500B6E13E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE62D28225464C500B6E13E /* Message.swift */; };
+		9DE62D2B225464D900B6E13E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE62D2A225464D900B6E13E /* FeedCell.swift */; };
 		9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */; };
 		9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BC22364C5C0039E2EA /* LineChart.swift */; };
 		E05D2B275E2EF9E9941BE03D /* libPods-GoalPost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */; };
@@ -99,6 +102,7 @@
 		9D1AE66D222679C5008B6455 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		9D1AE67022267CB4008B6455 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		9D1AE67322267E0B008B6455 /* Constrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
+		9D25297B22549A630008A80F /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		9D384351221D9A2E00F26468 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 		9D387B962237DC4F0045CEB9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9D387B982237DE070045CEB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 		9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9DC466DE2243FFC800901C8C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		9DE5612922463053005095B0 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		9DE62D28225464C500B6E13E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9DE62D2A225464D900B6E13E /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessVC.swift; sourceTree = "<group>"; };
 		9DFBA4BC22364C5C0039E2EA /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				9D47429D223BDDC300981A56 /* CurrentUser.swift */,
+				9DE62D28225464C500B6E13E /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 			children = (
 				9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */,
 				9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */,
+				9D25297B22549A630008A80F /* FeedVC.swift */,
 				9D5B27A3221C3EEF00F6BC51 /* CreateGoalVC.swift */,
 				9D384351221D9A2E00F26468 /* FinishGoalVC.swift */,
 				9DA2BD962230FC4F00073B48 /* bb.gif */,
@@ -334,6 +342,7 @@
 		9D93EE9B221BBB7E00CE3B73 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9DE62D2A225464D900B6E13E /* FeedCell.swift */,
 				9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */,
 				9D535D2B222C24EB00633991 /* Reminder.swift */,
 				9DFBA4BC22364C5C0039E2EA /* LineChart.swift */,
@@ -582,6 +591,7 @@
 				9D5B27A4221C3EF000F6BC51 /* CreateGoalVC.swift in Sources */,
 				9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */,
 				9D7C6569224872E8009FCFB8 /* CameraController.swift in Sources */,
+				9DE62D29225464C500B6E13E /* Message.swift in Sources */,
 				9D5A592F22380E3900D34CC8 /* ShadowView.swift in Sources */,
 				9D387B972237DC4F0045CEB9 /* DataService.swift in Sources */,
 				9DE5612A22463053005095B0 /* CameraVC.swift in Sources */,
@@ -594,8 +604,10 @@
 				9D5A592D2238034900D34CC8 /* InsetTextField.swift in Sources */,
 				9D8A2983223F4DD500C65187 /* AboutVC.swift in Sources */,
 				9D47429B223B9CEF00981A56 /* BackTableVC.swift in Sources */,
+				9DE62D2B225464D900B6E13E /* FeedCell.swift in Sources */,
 				9D93EE6C221BBB0800CE3B73 /* GoalVC.swift in Sources */,
 				9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */,
+				9D25297C22549A640008A80F /* FeedVC.swift in Sources */,
 				9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */,
 				9D4742A0223BE58C00981A56 /* UserProfileCell.swift in Sources */,
 				9DA3A464224CCCAF008FFC27 /* ImageViewController.swift in Sources */,

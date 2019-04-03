@@ -21,12 +21,17 @@ class UserProfileVC: UIViewController {
     @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUser()
+
         tableView.delegate =  self
         tableView.dataSource =  self
-        
+        emailLbl.text = Auth.auth().currentUser?.email
+
      
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     func fetchUser()  {
         
         if Auth.auth().currentUser !=  nil{

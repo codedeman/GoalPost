@@ -21,30 +21,36 @@ class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable
         startAnimating()
         
         let url = URL(string: "https://kienphamdev.blogspot.com/p/about-me.html")
-        
-        if let unwrappedURL = url{
-
+        let queue = DispatchQueue(label: "label")
+        queue.async {
             
-            let request  = URLRequest(url: unwrappedURL)
-            let session  = URLSession.shared
-            let task  = session.dataTask(with: request){
+            if let unwrappedURL = url{
                 
-                (data,response,err) in
-             
-                if err == nil{
+                
+                let request  = URLRequest(url: unwrappedURL)
+                let session  = URLSession.shared
+                let task  = session.dataTask(with: request){
                     
-                    self.webView.load(request)
-                }
-                else{
+                    (data,response,err) in
                     
-                    print("ERROR:\(String(describing: err))")
+                    if err == nil{
+                        DispatchQueue.main.async {
+                            self.webView.load(request)
+
+                        }
+                    }
+                    else{
+                        
+                        print("ERROR:\(String(describing: err))")
+                    }
                 }
+                task.resume()
+                
+                self.stopAnimating()
             }
-            task.resume()
-                
-            stopAnimating()
+            
         }
-        
+       
         // Do any additional setup after loading the view.
     }
     

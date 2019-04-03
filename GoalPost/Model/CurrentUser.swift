@@ -15,6 +15,6 @@ struct CurrentUser {
     init(uid:String,dictionary:[String:Any]) {
         
         self.uid = uid
-        self.email = dictionary["email"] as? String ?? "Phamtrungkiendev@gmail.com"
+        self.email = dictionary["email"] as? String ?? ""
     }
 }

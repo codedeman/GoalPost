@@ -77,8 +77,7 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
             self.save { (complete) in
                 if complete {
 //
-                    let test = "i'm felling high"
-                    DataService.instance.uploadPost(withMessage: test, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete: { (isComplete) in
+                    DataService.instance.uploadPost(withMessage: goalDescription, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil, sendComplete: { (isComplete) in
 
                         if isComplete{
 

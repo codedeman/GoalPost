@@ -50,10 +50,10 @@ class LoginVC: UIViewController {
             AuthService.instance.loginUser(withEmail: emailField.text!, andPassword: passwordField.text!) { (success,loginError ) in
                 if success {
                     
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-                        
-                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-                    }
+//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//                        
+//                        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+//                    }
                     let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "Main")
                     self.present(mainVC!, animated: true, completion: nil)
 //                    self.dismiss(animated: true, completion: nil)
