@@ -25,11 +25,11 @@ class BackTableVC:UITableViewController {
         return calendar.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UITableViewCell
-        cell.textLabel?.text = calendar[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+        cell?.textLabel?.text = calendar[indexPath.row]
         
         
-        return cell
+        return cell!
     }
     
 }

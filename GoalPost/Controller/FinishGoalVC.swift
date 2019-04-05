@@ -51,7 +51,7 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
             }
             else{
                 
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "e ")
             }
         }
     
@@ -66,7 +66,7 @@ class FinishGoalVC: UIViewController,UITextFieldDelegate {
         
         let components = Calendar.current.dateComponents([.hour, .minute], from: date)
    
-        let minute = components.minute!
+        _ = components.minute!
         
         
      

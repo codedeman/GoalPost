@@ -49,9 +49,14 @@
 		9DA3A464224CCCAF008FFC27 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */; };
 		9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */; };
 		9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC466DE2243FFC800901C8C /* RoundedButton.swift */; };
+		9DE50D6322572DF400CEB01B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE50D6222572DF400CEB01B /* Group.swift */; };
 		9DE5612A22463053005095B0 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE5612922463053005095B0 /* CameraVC.swift */; };
 		9DE62D29225464C500B6E13E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE62D28225464C500B6E13E /* Message.swift */; };
 		9DE62D2B225464D900B6E13E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE62D2A225464D900B6E13E /* FeedCell.swift */; };
+		9DEA31742255CFB900C7636F /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA31722255CFB900C7636F /* GroupCell.swift */; };
+		9DEA31752255CFB900C7636F /* GroupFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA31732255CFB900C7636F /* GroupFeedCell.swift */; };
+		9DEA31782255CFD500C7636F /* GroupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA31762255CFD300C7636F /* GroupFeedVC.swift */; };
+		9DEA31792255CFD500C7636F /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA31772255CFD400C7636F /* GroupsVC.swift */; };
 		9DFBA4BB22364BEC0039E2EA /* ProcessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */; };
 		9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBA4BC22364C5C0039E2EA /* LineChart.swift */; };
 		E05D2B275E2EF9E9941BE03D /* libPods-GoalPost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D55E0D1A07D198BA152ACEF /* libPods-GoalPost.a */; };
@@ -150,9 +155,14 @@
 		9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9DC466DC2243F96E00901C8C /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		9DC466DE2243FFC800901C8C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		9DE50D6222572DF400CEB01B /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		9DE5612922463053005095B0 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		9DE62D28225464C500B6E13E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9DE62D2A225464D900B6E13E /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		9DEA31722255CFB900C7636F /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		9DEA31732255CFB900C7636F /* GroupFeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFeedCell.swift; sourceTree = "<group>"; };
+		9DEA31762255CFD300C7636F /* GroupFeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupFeedVC.swift; sourceTree = "<group>"; };
+		9DEA31772255CFD400C7636F /* GroupsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		9DFBA4BA22364BEC0039E2EA /* ProcessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessVC.swift; sourceTree = "<group>"; };
 		9DFBA4BC22364C5C0039E2EA /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
 		A65C0D4E487CDCD58DA0F2D5 /* Pods-GoalPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoalPost.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +243,7 @@
 		9D47429C223BDD9900981A56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9DE50D6222572DF400CEB01B /* Group.swift */,
 				9D47429D223BDDC300981A56 /* CurrentUser.swift */,
 				9DE62D28225464C500B6E13E /* Message.swift */,
 			);
@@ -319,6 +330,8 @@
 		9D93EE9A221BBB3B00CE3B73 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9DEA31762255CFD300C7636F /* GroupFeedVC.swift */,
+				9DEA31772255CFD400C7636F /* GroupsVC.swift */,
 				9DA3A463224CCCAF008FFC27 /* ImageViewController.swift */,
 				9D93EE6B221BBB0800CE3B73 /* GoalVC.swift */,
 				9D25297B22549A630008A80F /* FeedVC.swift */,
@@ -344,6 +357,8 @@
 			children = (
 				9DE62D2A225464D900B6E13E /* FeedCell.swift */,
 				9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */,
+				9DEA31722255CFB900C7636F /* GroupCell.swift */,
+				9DEA31732255CFB900C7636F /* GroupFeedCell.swift */,
 				9D535D2B222C24EB00633991 /* Reminder.swift */,
 				9DFBA4BC22364C5C0039E2EA /* LineChart.swift */,
 				9D5A592C2238034900D34CC8 /* InsetTextField.swift */,
@@ -383,7 +398,7 @@
 				9D93EE63221BBB0800CE3B73 /* Frameworks */,
 				9D93EE64221BBB0800CE3B73 /* Resources */,
 				9DA2BDAE2230FFF600073B48 /* Embed App Extensions */,
-				F13AD60A9B3888C2BAD9DC3D /* [CP] Copy Pods Resources */,
+				9F5A4721E2303AF00A75D903 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -556,7 +571,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F13AD60A9B3888C2BAD9DC3D /* [CP] Copy Pods Resources */ = {
+		9F5A4721E2303AF00A75D903 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,11 +603,13 @@
 				9D1AE66E222679C5008B6455 /* LoginVC.swift in Sources */,
 				9D535D2C222C24EB00633991 /* Reminder.swift in Sources */,
 				9D93EE9E221BC70E00CE3B73 /* GoalCell.swift in Sources */,
+				9DE50D6322572DF400CEB01B /* Group.swift in Sources */,
 				9D5B27A4221C3EF000F6BC51 /* CreateGoalVC.swift in Sources */,
 				9DFBA4BD22364C5C0039E2EA /* LineChart.swift in Sources */,
 				9D7C6569224872E8009FCFB8 /* CameraController.swift in Sources */,
 				9DE62D29225464C500B6E13E /* Message.swift in Sources */,
 				9D5A592F22380E3900D34CC8 /* ShadowView.swift in Sources */,
+				9DEA31782255CFD500C7636F /* GroupFeedVC.swift in Sources */,
 				9D387B972237DC4F0045CEB9 /* DataService.swift in Sources */,
 				9DE5612A22463053005095B0 /* CameraVC.swift in Sources */,
 				9D1AE67122267CB4008B6455 /* AuthService.swift in Sources */,
@@ -611,13 +628,16 @@
 				9DC466DD2243F96E00901C8C /* CreateAccountVC.swift in Sources */,
 				9D4742A0223BE58C00981A56 /* UserProfileCell.swift in Sources */,
 				9DA3A464224CCCAF008FFC27 /* ImageViewController.swift in Sources */,
+				9DEA31752255CFB900C7636F /* GroupFeedCell.swift in Sources */,
 				9D4C4A112237A2AE001F0329 /* SWRevealViewController.m in Sources */,
+				9DEA31742255CFB900C7636F /* GroupCell.swift in Sources */,
 				9D98680522390FA600656C10 /* AuthVC.swift in Sources */,
 				9D93EE6A221BBB0800CE3B73 /* AppDelegate.swift in Sources */,
 				9D5B27AB221C571C00F6BC51 /* UIButtonExt.swift in Sources */,
 				9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */,
 				9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */,
 				9DC466DF2243FFC800901C8C /* RoundedButton.swift in Sources */,
+				9DEA31792255CFD500C7636F /* GroupsVC.swift in Sources */,
 				9D47429E223BDDC300981A56 /* CurrentUser.swift in Sources */,
 				9D93EE72221BBB0800CE3B73 /* GoalPost.xcdatamodeld in Sources */,
 			);

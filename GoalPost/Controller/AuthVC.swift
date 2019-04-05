@@ -37,6 +37,14 @@ class AuthVC: UIViewController {
     @IBAction func facebookSignInWasPressed(_ sender: Any) {
     }
     
+//    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+//        if let error = error {
+//            print(error.localizedDescription)
+//            return
+//        }
+//        // ...
+//    }
+    
     /*
     // MARK: - Navigation
 

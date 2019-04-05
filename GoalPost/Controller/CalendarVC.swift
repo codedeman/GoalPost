@@ -21,7 +21,7 @@ final class CalendarVC: UIViewController {
                 nextButtonImage: #imageLiteral(resourceName: "next"),
                 dateFormatter:dateFormatter
             )
-            mothHearderView.delegate = self as! VAMonthHeaderViewDelegate
+            mothHearderView.delegate = self as VAMonthHeaderViewDelegate
             mothHearderView.appearance = appereance
         }
         
@@ -50,9 +50,9 @@ final class CalendarVC: UIViewController {
         calendarView.showDaysOut = true
         calendarView.selectionStyle = .multi
         calendarView.monthDelegate = mothHearderView
-        calendarView.dayViewAppearanceDelegate = self as! VADayViewAppearanceDelegate
-        calendarView.monthViewAppearanceDelegate = self as! VAMonthViewAppearanceDelegate
-        calendarView.calendarDelegate = self as! VACalendarViewDelegate
+        calendarView.dayViewAppearanceDelegate = self as VADayViewAppearanceDelegate
+        calendarView.monthViewAppearanceDelegate = self as VAMonthViewAppearanceDelegate
+        calendarView.calendarDelegate = self as VACalendarViewDelegate
         calendarView.scrollDirection = .horizontal
         view.addSubview(calendarView)
        

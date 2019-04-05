@@ -13,6 +13,7 @@ class Reminder: NSObject,NSCoding {
     
     
     var notification:UILocalNotification?
+//    var notification:UNNotificationRequest?
     var description1: String
     var time:NSDate
     

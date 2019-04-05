@@ -46,33 +46,26 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         let message = messageArray[indexPath.row]
         
 //        cell.configureCell(profileImage: image!, email: message.senderId, content: message.content)
-//        DataService.instance.
+        
         DataService.instance.getUsername(forUID: message.senderId) { (returnedUsername) in
-//            cell.configureCell(profileImage: image, email: , content: <#T##String#>)
-//            cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
-//            print("hey kevin i'm here\(message.content)")
+            cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell else { return UITableViewCell() }
-        
-        let cell  = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? FeedCell else { return }
+
         
         let image = UIImage(named: "defaultProfileImage")
         let message = messageArray[indexPath.row]
-//        cell?.emailLbl.text =  Auth.auth().currentUser?.email
-        cell?.configureCell(profileImage: image!, email: message.senderId, content: message.content)
+//        cell.configureCell(profileImage: image!, email: message.senderId, content: message.content)
         
-//        message.senderId =  Auth.auth().currentUser?.email
-//         cell.configureCell(profileImage: image, email: , content: message.content)
-//        DataService.instance.getUsername(forUID: message.senderId) { (returnedUsername) in
-//            //            cell.configureCell(profileImage: image, email: , content: <#T##String#>)
-////            cell?.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
-//            //            print("hey kevin i'm here\(message.content)")
-//        }
+        
+        DataService.instance.getUsername(forUID: message.content) { (returnedUsername) in
+            print("i'm here \(returnedUsername)")
+            cell.configureCell(profileImage: image!, email: returnedUsername, content: message.content)
+        }
         
     }
 }

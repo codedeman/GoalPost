@@ -16,6 +16,13 @@
     <string>418786712210511</string>
     <key>FacebookDisplayName</key>
     <string>GoalPost</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Photo Library Access Warning</string>
 	<key>NSAppleScriptEnabled</key>

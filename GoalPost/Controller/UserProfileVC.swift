@@ -84,7 +84,7 @@ extension UserProfileVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UserProfileCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! UserProfileCell
         cell.goalLbl.text  = calendar[indexPath.row]
         cell.imageName.image = UIImage(named: imageIcon[indexPath.row])
         

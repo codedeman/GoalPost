@@ -22,7 +22,7 @@ class GoalVC: UIViewController {
     @IBOutlet var tableVIew: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("your process\(goal?.goalProgress)")
+        print("your process\(String(describing: goal?.goalProgress))")
         if self.revealViewController() != nil {
 //            menuButton.target =  self.revealViewController()
 //            menuButton.action = "revealToggle:"

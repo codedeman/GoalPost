@@ -64,7 +64,6 @@ override func viewDidAppear(_ animated: Bool) {
         // default device
         currentDevice = frontFacingCamera
         
-        // configure the session with the output for capturing our still image
         stillImageOutput = AVCaptureStillImageOutput()
         stillImageOutput?.outputSettings = [AVVideoCodecKey : AVVideoCodecJPEG]
         
