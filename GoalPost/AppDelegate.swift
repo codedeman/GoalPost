@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import UserNotifications
 import Firebase
-import FBSDKLogin
+
 //import FirebaseCoreDiagnostics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -79,7 +79,7 @@ override func viewDidAppear(_ animated: Bool) {
             cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             cameraPreviewLayer?.frame = view.layer.frame
             
-            view.bringSubviewToFront(camerButton)
+            view.bringSubview(toFront: camerButton)
             
             captureSession.startRunning()
             

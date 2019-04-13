@@ -1070,7 +1070,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2k2-LU-xt3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4042" y="349"/>
+            <point key="canvasLocation" x="4377" y="-749"/>
         </scene>
         <!--calendar-->
         <scene sceneID="1Ev-IJ-Tsv">
@@ -1861,7 +1861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlv-NE-njn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2630" y="1348"/>
+            <point key="canvasLocation" x="1374" y="1143"/>
         </scene>
     </scenes>
     <resources>
@@ -1885,6 +1885,6 @@
         <image name="me" width="46080" height="69120"/>
         <image name="me-tabIcon" width="25" height="25"/>
         <image name="video" width="48" height="48"/>
-        <image name="whiteCheckmark" width="16" height="16"/>
+        <image name="whiteCheckmark" width="18" height="14"/>
     </resources>
 </document>

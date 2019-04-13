@@ -14,6 +14,7 @@
 		9D384352221D9A2E00F26468 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D384351221D9A2E00F26468 /* FinishGoalVC.swift */; };
 		9D387B972237DC4F0045CEB9 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D387B962237DC4F0045CEB9 /* DataService.swift */; };
 		9D387B992237DE080045CEB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D387B982237DE070045CEB9 /* GoogleService-Info.plist */; };
+		9D43EBF32257642300BC9C21 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D43EBF22257642200BC9C21 /* UserCell.swift */; };
 		9D47429B223B9CEF00981A56 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D47429A223B9CEF00981A56 /* BackTableVC.swift */; };
 		9D47429E223BDDC300981A56 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D47429D223BDDC300981A56 /* CurrentUser.swift */; };
 		9D4742A0223BE58C00981A56 /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D47429F223BE58C00981A56 /* UserProfileCell.swift */; };
@@ -111,6 +112,7 @@
 		9D384351221D9A2E00F26468 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 		9D387B962237DC4F0045CEB9 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		9D387B982237DE070045CEB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D43EBF22257642200BC9C21 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		9D47429A223B9CEF00981A56 /* BackTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 		9D47429D223BDDC300981A56 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9D47429F223BE58C00981A56 /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			children = (
 				9DE62D2A225464D900B6E13E /* FeedCell.swift */,
 				9D93EE9D221BC70E00CE3B73 /* GoalCell.swift */,
+				9D43EBF22257642200BC9C21 /* UserCell.swift */,
 				9DEA31722255CFB900C7636F /* GroupCell.swift */,
 				9DEA31732255CFB900C7636F /* GroupFeedCell.swift */,
 				9D535D2B222C24EB00633991 /* Reminder.swift */,
@@ -398,7 +401,6 @@
 				9D93EE63221BBB0800CE3B73 /* Frameworks */,
 				9D93EE64221BBB0800CE3B73 /* Resources */,
 				9DA2BDAE2230FFF600073B48 /* Embed App Extensions */,
-				9F5A4721E2303AF00A75D903 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -475,7 +477,7 @@
 				TargetAttributes = {
 					9D93EE65221BBB0800CE3B73 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = "";
 					};
 					9D93EE7C221BBB0B00CE3B73 = {
 						CreatedOnToolsVersion = 10.1;
@@ -571,28 +573,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F5A4721E2303AF00A75D903 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost-resources.sh",
-				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GoalPost/Pods-GoalPost-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -632,6 +612,7 @@
 				9D4C4A112237A2AE001F0329 /* SWRevealViewController.m in Sources */,
 				9DEA31742255CFB900C7636F /* GroupCell.swift in Sources */,
 				9D98680522390FA600656C10 /* AuthVC.swift in Sources */,
+				9D43EBF32257642300BC9C21 /* UserCell.swift in Sources */,
 				9D93EE6A221BBB0800CE3B73 /* AppDelegate.swift in Sources */,
 				9D5B27AB221C571C00F6BC51 /* UIButtonExt.swift in Sources */,
 				9D1AE67422267E0B008B6455 /* Constrants.swift in Sources */,
@@ -773,6 +754,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -827,6 +809,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -840,16 +823,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PBBT599Q77;
 				INFOPLIST_FILE = GoalPost/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kevinphamdev.com.GoalPost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoalPost/Extentions/GoalPost-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -863,15 +847,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PBBT599Q77;
 				INFOPLIST_FILE = GoalPost/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = kevinphamdev.com.GoalPost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoalPost/Extentions/GoalPost-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

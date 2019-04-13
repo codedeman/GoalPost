@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 import Firebase
 
 
@@ -33,7 +32,7 @@ class LoginVC: UIViewController {
         actInd.frame = CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)
         actInd.center =  uiView.center
         actInd.hidesWhenStopped = true
-        actInd.style =
+        actInd.activityIndicatorViewStyle =
             UIActivityIndicatorView.Style.whiteLarge
         uiView.addSubview(actInd)
 //        showActivityIndicatory.startAnimating()

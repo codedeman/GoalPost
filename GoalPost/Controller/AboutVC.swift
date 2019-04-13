@@ -8,17 +8,17 @@
 
 import UIKit
 import WebKit
-import NVActivityIndicatorView
+//import NVActivityIndicatorView
 
 
-class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable{
-    static let activityData = ActivityData()
+class AboutVC: UIViewController,WKNavigationDelegate{
+//    static let activityData = ActivityData()
 
     @IBOutlet var webView: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startAnimating()
+//        startAnimating()
         
         let url = URL(string: "https://kienphamdev.blogspot.com/p/about-me.html")
         let queue = DispatchQueue(label: "label")
@@ -46,7 +46,7 @@ class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable
                 }
                 task.resume()
                 
-                self.stopAnimating()
+//                self.stopAnimating()
             }
             
         }
@@ -57,11 +57,11 @@ class AboutVC: UIViewController,WKNavigationDelegate,NVActivityIndicatorViewable
     override func viewDidAppear(_ animated: Bool) {
         
 //        let size = CGSize(width: 30.0, height: 30.0)
-        startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
-        }
+//        startAnimating()
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+//
+//            NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+//        }
         
     }
 

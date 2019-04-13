@@ -1,6 +1,0 @@
-module PieCharts {
-  umbrella header "PieCharts-umbrella.h"
-
-  export *
-  module * { export * }
-}
